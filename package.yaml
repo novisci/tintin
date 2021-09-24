@@ -63,6 +63,12 @@ library:
   verbatim:
     build-tool-depends: require:requirepp
 
+  # Work around compile error
+  # See https://github.com/sol/hpack#handling-of-paths_-modules
+  when:
+  - condition: false
+    other-modules: Paths_tintin
+
 executables:
   tintin:
     main: Main.hs
